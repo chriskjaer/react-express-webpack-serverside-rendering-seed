@@ -1,6 +1,6 @@
 # React Serverside Rendering Seed.
 
->> React serverside rendering seed. Powered by Express and Webpack.
+>React serverside rendering seed. Powered by Express and Webpack.
 
 Clone this repo and do an `npm install`.
 
@@ -15,6 +15,7 @@ Before running production, make sure you run an `npm run build` first to let
 webpack build some production assets.
 
 ### TODO
+
 - [ ] Add React Router example
 - [ ] Add Reflux example
 - [ ] Better nodemon/server reloading of the compiled app on the server
