@@ -8,7 +8,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   context: appRoot,
   entry: [path.join(appRoot, 'app')],
-  publicPath: '/',
+  publicPath: '/dist/',
   output: {
     path: path.join(appRoot, 'dist'),
   },

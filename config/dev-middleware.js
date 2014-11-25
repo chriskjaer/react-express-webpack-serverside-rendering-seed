@@ -5,8 +5,8 @@ module.exports = function configureWebpackDevServer(app, config) {
 
   var DEV_URL = 'http://' + config.host + ':' + config.port;
   var Server = require('webpack-dev-server');
-  var browserConfig = require('./webpack.browser.config');
-  var nodeConfig = require('./webpack.node.config');
+  var browserConfig = require('./webpack/webpack.browser.config');
+  var nodeConfig = require('./webpack/webpack.node.config');
   var webpack = require('webpack');
   var browserCompiler;
   var nodeCompiler;
@@ -46,7 +46,7 @@ module.exports = function configureWebpackDevServer(app, config) {
     if (err) throw err;
   });
 
-  app.use(server.middleware);
+  app.use('/dist', server.middleware);
 
   return server;
 };
