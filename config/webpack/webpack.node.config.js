@@ -9,9 +9,15 @@ module.exports = Object.assign({}, shared, {
     filename: 'node.bundle.js'
   }),
   plugins: shared.plugins.concat(
-    new webpack.DefinePlugin({ SERVER: true, BROWSER: false })
+    new webpack.DefinePlugin(Object.assign({}, shared.statics.variables, {
+    __SERVER__: true
+  }))
   ),
   target: 'node',
-  externals: /^[a-z\-0-9]+$/ // All non-relative modules
+  module: {
+    loaders: shared.module.loaders.concat(
+      { test: /\.jsx$/, loaders: [ 'jsx?harmony&insertPragma=React.DOM'  ]}
+    )
+  },
+  externals: shared.statics.vendor
 });
-

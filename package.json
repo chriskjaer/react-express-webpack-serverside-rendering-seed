@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "production": "NODE_ENV=production node index.js",
-    "start": "nodemon -e js,jsx --watch index.js index.js",
+    "dev": "webpack --watch --config ./config/webpack/webpack.node.config.js & node_modules/.bin/supervisor --ignore app/ -e js index.js & node ./config/webpack/hot-load-server",
     "build": "webpack -p"
   },
   "author": "Chris Kjær Sørensen",
@@ -22,9 +21,10 @@
     "extract-text-webpack-plugin": "^0.3.5",
     "jsx-loader": "^0.12.2",
     "morgan": "^1.5.0",
-    "nodemon": "^1.2.1",
     "normalize.css": "^3.0.2",
+    "react-hot-loader": "^0.5.0",
     "style-loader": "^0.8.2",
+    "supervisor": "^0.6.0",
     "webpack": "^1.4.13",
     "webpack-dev-server": "^1.6.6"
   }
